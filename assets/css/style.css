@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.header {
+    background-color: #3F51B5;
+}
+
+.header p {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.header button {
+    padding: 10px 20px ;
+    margin:0 10px 0 0;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+}
+
+
+#boxContainer {
+    position: fixed;
+    display:none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+#formContainer {
+    width: 40%;
+    height: 550px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#saveBtn {
+    padding: 3px 80px ;
+    color: #fff;
+    background-color: #6b6bd1;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#saveBtn:hover {
+    background-color: #3f51b5;
+    transition: 0.4s;
+}
+
+#cancelBtn {
+    padding: 3px 80px ;
+    color: #000;
+    background-color: #ebebf3;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#cancelBtn:hover {
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+#userNameAlert {
+    position: absolute;
+    display: none;
+    background-color: #c90;
+    width: 235px;
+    height: 150px;
+    top: 37px;
+    left: -247px;
+    border-radius: 6px;
+}
+
+#userNameAlert::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #c90;
+    top: 4px;
+    right: -19px;
+    width: 10px;
+    height: 10px;
+}
+
+#userAgeAlert {
+    position: absolute;
+    display: none;
+    background-color: #c90;
+    width: 235px;
+    height: 85px;
+    top: 20px;
+    right: -248px;
+    border-radius: 6px;
+}
+
+#userAgeAlert::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #c90 transparent transparent;
+    top: 20px;
+    left: -19px;
+    width: 10px;
+    height: 10px;
+}
+
+
+#userEmailAlert {
+    position: absolute;
+    display: none;
+    background-color: #c90;
+    width: 235px;
+    height: 173px;
+    top: 37px;
+    left: -247px;
+    border-radius: 6px;
+}
+
+#userEmailAlert::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #c90;
+    top: 4px;
+    right: -19px;
+    width: 10px;
+    height: 10px;
+}
+
+#userEducationAlert {
+    position: absolute;
+    display: none;
+    background-color: #c90;
+    width: 235px;
+    height: 60px;
+    top: 20px;
+    right: -248px;
+    border-radius: 6px;
+}
+
+#userEducationAlert::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #c90 transparent transparent;
+    top: 20px;
+    left: -19px;
+    width: 10px;
+    height: 10px;
+}
+
+#userCountryAlert {
+    position: absolute;
+    display: none;
+    background-color: #c90;
+    width: 235px;
+    height: 60px;
+    top: 20px;
+    right: -248px;
+    border-radius: 6px;
+}
+
+#userCountryAlert::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #c90 transparent transparent;
+    top: 20px;
+    left: -19px;
+    width: 10px;
+    height: 10px;
+}
+
+ .delete { 
+    color: #F44236;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+ .delete::after {
+    content: " ";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: 8px;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.delete:hover::after {
+    background-color: #ebe8e8;
+}
+
+ .edit { 
+    color: #3F51B5;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+ .edit::after {
+    content: " ";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: -11px;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.edit:hover::after {
+    background-color: #ebe8e8;
+}
+
+
+
+
+@media (min-width:480px) and  (max-width:569px){
+
+    #userNameAlert {
+        font-size: 12px;
+        font-weight: bold;
+        width: 144px;
+        height: 155px;
+        top: -10px;
+        left: -155px;
+        padding-right: 15px;
+    }
+
+    #userNameAlert::after {
+        top: 50px;
+    }
+
+    #userAgeAlert {
+        font-size: 12px;
+        font-weight: bold;
+        width: 144px;
+        height: 105px;
+        top: 25px;
+        right: -155px;
+    }
+    #userAgeAlert::after {
+        top: 15px;
+    }
+
+    #userEmailAlert {
+        font-size: 12px;
+        font-weight: bold;
+        width: 144px;
+        height: 190px;
+        top: 25px;
+        left: -155px;
+        padding-right: 15px;
+    }
+    #userEmailAlert::after {
+        top: 15px;
+    }
+
+    #userEducationAlert {
+        font-size: 12px;
+        font-weight: bold;
+        width: 143px;
+        height: 65px;
+        top: 25px;
+        right: -155px;
+    }
+    
+    #userEducationAlert::after { 
+        top: 13px;
+    }
+
+    #userCountryAlert {
+        font-size: 12px;
+        font-weight: bold;
+        width: 143px;
+        height: 65px;
+        top: 25px;
+        right: -155px;
+    }
+    
+    #userCountryAlert::after {
+        top: 13px;
+    }
+
+    .buttonContainer {
+        flex-direction: column-reverse;
+    }
+
+    #saveBtn {
+        padding: 3px 60px;
+    }
+
+    #cancelBtn {
+        padding: 3px 55px;
+    }
+
+    .delete {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+
+    .delete::after {
+        top: -10px;
+        left: -2px;
+    }
+
+    .edit {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:570px) and  (max-width:767px){
+    #userNameAlert {
+        font-size: 14px;
+        font-weight: bold;
+        width: 171px;
+        height: 185px;
+        top: -10px;
+        left: -183px;
+        padding-right: 15px;
+    }
+
+    #userNameAlert::after {
+        top: 50px;
+    }
+
+    #userAgeAlert {
+        font-size: 14px;
+        font-weight: bold;
+        width: 171px;
+        height: 115px;
+        top: 25px;
+        right: -183px;
+    }
+
+    #userAgeAlert::after {
+        top: 15px;
+    }
+
+    #userEmailAlert {
+        font-size: 14px;
+        font-weight: bold;
+        width: 171px;
+        height: 200px;
+        top: 25px;
+        left: -183px;
+        padding-right: 15px;
+    }
+
+    #userEmailAlert::after {
+        top: 15px;
+    }
+
+    #userEducationAlert {
+        font-size: 14px;
+        font-weight: bold;
+        width: 170px;
+        height: 70px;
+        top: 28px;
+        right: -183px;
+    }
+
+    #userEducationAlert::after {
+        top: 15px;
+    }
+
+    #userCountryAlert {
+        font-size: 14px;
+        font-weight: bold;
+        width: 170px;
+        height: 70px;
+        top: 28px;
+        right: -183px;
+    }
+
+    #userCountryAlert::after {
+        top: 15px;
+    }
+    .buttonContainer {
+        flex-direction: column-reverse;
+    }
+
+    #saveBtn {
+        padding: 3px 65px;
+    }
+
+    #cancelBtn {
+        padding: 3px 60px;
+    }
+}
+
+@media (min-width:768px) and  (max-width:1023px){
+    #userNameAlert {
+        width: 230px;
+        height: 150px;
+        top: -10px;
+        left: -242px;
+        padding-right: 15px;
+    }
+
+    #userNameAlert::after {
+        top: 50px;
+    }
+
+    #userAgeAlert {
+        width: 230px;
+        height: 100px;
+        top: 25px;
+        right: -242px;
+    }
+
+    #userAgeAlert::after {
+        top: 15px;
+    }
+
+    #userEmailAlert {
+        width: 230px;
+        height: 200px;
+        top: 25px;
+        left: -242px;
+        padding-right: 15px;
+    }
+
+    #userEmailAlert::after {
+        top: 15px;
+    }
+
+    #userEducationAlert {
+        width: 229px;
+        height: 75px;
+        top: 28px;
+        right: -242px;
+    }
+
+    #userEducationAlert::after {
+        top: 15px;
+    }
+
+    #userCountryAlert {
+        width: 229px;
+        height: 55px;
+        top: 28px;
+        right: -242px;
+    }
+
+    #userCountryAlert::after {
+        top: 15px;
+    }
+
+    .buttonContainer {
+        flex-direction: column-reverse;
+    }
+
+    #saveBtn {
+        padding: 3px 90px;
+    }
+
+    #cancelBtn {
+        padding: 3px 85px;
+    }
+}
+
+@media (min-width:1024px)  and  (max-width:1199px){
+    #userNameAlert {
+        font-weight: normal;
+        width: 230px;
+        height: 150px;
+        top: -10px;
+        left: -242px;
+        padding-right: 15px;
+    }
+
+    #userNameAlert::after {
+        top: 50px;
+    }
+
+    #userAgeAlert {
+        font-weight: normal;
+        width: 230px;
+        height: 100px;
+        top: 25px;
+        right: -242px;
+    }
+
+    #userAgeAlert::after {
+        top: 15px;
+    }
+
+    #userEmailAlert {
+        font-weight: normal;
+        width: 230px;
+        height: 195px;
+        top: 25px;
+        left: -242px;
+        padding-right: 15px;
+    }
+
+    #userEmailAlert::after {
+        top: 15px;
+    }
+
+    #userEducationAlert {
+        font-weight: normal;
+        width: 229px;
+        height: 75px;
+        top: 28px;
+        right: -242px;
+    }
+
+    #userEducationAlert::after {
+        top: 15px;
+    }
+
+    #userCountryAlert {
+        font-weight: normal;
+        width: 229px;
+        height: 55px;
+        top: 28px;
+        right: -242px;
+    }
+
+    #userCountryAlert::after {
+        top: 15px;
+    }
+
+    .buttonContainer {
+        flex-direction: row;
+    }
+
+    #saveBtn {
+        padding: 3px 60px;
+    }
+
+    #cancelBtn {
+        padding: 3px 55px;
+    }
+}
